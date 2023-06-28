@@ -19,12 +19,19 @@ function transportFee (shift) {
     Alpine.data('transportFeeWidget', () => ({
         shift: '',
         fee: '',
+        open: false,
 
 
         calculateFee(e) {
             const selectedShift = transportFee(e.target.value)
             console.log(selectedShift);
             this.fee = selectedShift;
+            this.open= true;
+            setTimeout(() => {
+              this.shift = "";
+              this.fee = "";
+              this.open = "";
+            }, 3000);
 
         }
     }))
