@@ -1,5 +1,10 @@
 body {
     background-color: grey;
+    font-style:inherit;
+}
+
+.heading {
+    text-align: center;
 }
 
 .box {
@@ -7,4 +12,43 @@ body {
     border-radius: 0.5em;
     padding: 1em;
     background-color: beige;
+}
+
+.greetbtn {
+    border: 2px solid black;
+    border-radius: 0.5em;
+}
+
+.container{
+    padding: 1em;
+    flex: 1;
+}
+
+.airtime{
+    border: 0.5px solid black;
+    border-radius: 0.5em;
+    padding: 1em; 
+    margin-right: 1em;
+    flex: 1;
+}
+
+.Fee{
+    border: 0.5px solid black;
+    border-radius: 0.5em;
+    padding: 1em; 
+   margin-right: 1em;
+    flex: 1;
+}
+
+.bill{
+    border: 0.5px solid black;
+    border-radius: 0.5em;
+    padding: 1em; 
+  margin-right: 1em ;
+    flex: 1;
+}
+
+@media (min-width : 960px) {
+
+    .container {display: flex;}
 }

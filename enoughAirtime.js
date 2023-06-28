@@ -19,8 +19,7 @@ function enoughAirtime(projectedUsage, airtimeAvailable){
       return "R" + (airtimeLeft).toFixed(2);
     }
     else{
-      //cost = 0;
-      //return "R" + cost.toFixed(2);
+     
       return "R0.00";
   }
 }
@@ -37,12 +36,12 @@ document.addEventListener('alpine:init', () => {
           airtimeAvailable : '',
           airtimeMessage : '',
           calculate() {
-              const amount = enoughAirtime(this.projectedUsage, this.airtimeAvailable)
-              this.airtimeMessage = amount
+              const price = enoughAirtime(this.projectedUsage, this.airtimeAvailable)
+              this.airtimeMessage = price
 
               setTimeout(() => {
-                  this.airtimeUsage = '',
-                  this.availableAirtime = '',
+                  this.projectedUsage = '',
+                  this.airtimeAvailable = '',
                   this.airtimeMessage = ''
                  }, 5000);
 
