@@ -1,0 +1,10 @@
+body {
+    background-color: grey;
+}
+
+.box {
+    border: 1px solid black;
+    border-radius: 0.5em;
+    padding: 1em;
+    background-color: beige;
+}

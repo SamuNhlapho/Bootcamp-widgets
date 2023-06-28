@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlpineJS widgets for Bootcamp functions</title>
+<link rel="stylesheet" href="style.css">
+  <script src="//unpkg.com/alpinejs" defer></script>
+  <script src="transportfee.js"></script>
+  <script src="greet.js" ></script>
+  <script src="totalPhoneBill.js"></script>
+  <script src="enoughAirtime.js"></script>
+</head>
+
+<body>
+
+ <section class="heading text-center"><h1>AlpineJS widgets for Bootcamp functions</h1></section> 
+
+<hr>
+
+<div class="container">
+  <h2>Greet function widget</h2>
+
+  <div x-data="{ greet: greet }">
+
+    <div x-data="greeting()">
+
+      <h3>Choose a language below</h3>
+      <select x-model="language">
+        <option value="">Select language</option>
+        <option value="English">English</option>
+        <option value="IsiZulu">IsiZulu</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Afrikaans">Afrikaans</option>
+        <option value="Korean">Korean</option>
+      </select>
+      <br>
+      <br>
+
+      <div class="box" x-text="greets"></div>
+      <br>
+      <label for="Name">Please enter Name:</label>
+      <input type="text" x-model="name">
+      <button x-on:click="showGreeting()">Please Greet</button>
+
+    </div>
+  </div>
+
+    <br>
+
+    <hr>
+ </div>
+
+ 
+</div>
+
+ 
+  <div class="container">
+
+    <h2>Transport Fee function widget</h2>
+
+    <div x-data="transportFeeWidget">
+      <label>
+        <input type="radio" value="morning" x-model="shift" @click="calculateFee">
+        Morning
+      </label><br>
+<br>
+      <label>
+        <input type="radio" value="afternoon" x-model="shift" @click="calculateFee">
+        Afternoon
+      </label><br>
+<br>
+      <label>
+        <input type="radio" value="nightshift" x-model="shift" @click="calculateFee">
+        Nightshift
+      </label>
+
+      <div x-show="shift != ''" x-init="data= shift">
+        <p>In the <span x-text="shift"></span> <span>the transport fee is: <span x-text="fee"></span></span></p>
+      </div>
+    </div>
+
+    <br>
+<hr> 
+    <div class="container">
+      <h2>Total Phone Bill function widget </h2>
+      <br>
+      <div x-data="totalPhoneBill">
+
+        <label>
+          Phone Usage:
+          <input value="phoneUsage" type="text" x-model="phoneString">
+        </label>
+        <div x-show="totalBill.length > 0" x-text="totalBill"> </div>
+        <button x-on:click="calculateTotalUsage">Total phone bill</button>
+      </div>
+
+      <br>
+
+      <hr>
+      
+      <div class="container">
+        <h2>Enough Airtime function widget</h2>
+        <br>
+      <div x-data="enoughAirtime">
+<label>
+  <div class="input">
+    <label for="usage">Projected usage: </label>
+    <input type="text" x-model="projectedUsage">
+</div>
+</label>
+    <br>
+    <br>
+
+    <label>
+      <div class="input">
+        <label for="airtime">Airtime available: </label>
+        <input type="text" x-model="airtimeAvailable">
+    </div>
+    </label>
+       
+    
+        <div x-show="airtimeMessage.length > 0" class="message" x-text="airtimeMessage"></div><br>
+          <button x-on:click="calculate()">Airtime remaining</button>
+        </div>
+    </div>
+    </div>
+
+
+        <script src="script.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+</body>
+
+</html>
